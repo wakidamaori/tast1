@@ -2,213 +2,869 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>私の自己紹介</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-       
-/* 基本設定 */
+<title>moonlit café | Korean Night Cafe</title>
+<meta name="description" content="夜の静けさと、コーヒーの香り。韓国カフェ風のナイトカフェ。">
+
+<style>
+:root {
+  --bg: #211916;
+  --bg-light: #2D211E;
+  --text: #F2E7DA;
+  --accent: #A85D70;
+  --sub: #392824;
+  --muted: #C8B6A7;
+  --line: #49352F;
+}
+
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
 }
 
 body {
-    margin: 0;
-    padding-bottom: 150px;
-    font-family: "Noto Sans JP", "Yu Gothic", sans-serif;
-    line-height: 1.8;
-    color: #514650;
-    background: linear-gradient(135deg, #fffaf8, #f6edf1);
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Yu Mincho", "Hiragino Mincho ProN",
+    "Noto Serif JP", serif;
+  line-height: 1.9;
 }
 
-/* ヘッダー */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+button {
+  font: inherit;
+}
+
 header {
-    background: linear-gradient(120deg, #d8b7c6, #bda2b8);
-    color: #fffdfd;
-    text-align: center;
-    padding: 38px 20px;
-    border-bottom: 3px solid #e5cba5;
+  height: 76px;
+  padding: 0 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(33, 25, 22, .97);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(10px);
 }
 
-header h1 {
-    margin: 0;
-    font-size: 30px;
-    letter-spacing: 5px;
-    font-weight: 500;
+.logo {
+  font-size: 23px;
+  letter-spacing: 3px;
+  white-space: nowrap;
 }
 
-/* メインコンテンツ */
-main {
-    max-width: 850px;
-    margin: 45px auto;
-    padding: 0 22px;
+.logo span {
+  color: #D39AA5;
 }
 
-section {
-    background-color: rgba(255, 255, 255, 0.92);
-    padding: 28px;
-    margin-bottom: 25px;
-    border: 1px solid #eadce3;
-    border-left: 5px solid #c9a6ba;
-    border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(132, 93, 116, 0.09);
-    transition: transform 0.3s, box-shadow 0.3s;
+nav {
+  display: flex;
+  align-items: center;
+  gap: 27px;
 }
 
-/* カーソルを合わせたとき */
-section:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 24px rgba(132, 93, 116, 0.15);
+nav a {
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  transition: color .3s;
 }
 
-section h2 {
-    color: #a16f8b;
-    font-size: 21px;
-    font-weight: 600;
-    border-bottom: 1px solid #e8cedb;
-    padding-bottom: 10px;
-    margin-top: 0;
+nav a:hover {
+  color: #D39AA5;
 }
 
-section p {
-    margin-bottom: 0;
-    color: #5d535a;
+.nav-button,
+.button {
+  display: inline-block;
+  padding: 10px 24px;
+  border: 1px solid var(--accent);
+  border-radius: 30px;
+  color: #F2E7DA;
+  font-size: 12px;
+  letter-spacing: 1px;
+  transition: .3s;
 }
 
-/* フッター */
+.nav-button,
+.button.filled {
+  background: var(--accent);
+}
+
+.button:hover,
+.nav-button:hover {
+  background: #F2E7DA;
+  color: var(--bg);
+  border-color: #F2E7DA;
+}
+
+.menu-toggle {
+  display: none;
+  border: none;
+  background: none;
+  color: var(--text);
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 610px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 80px 9%;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(24, 16, 14, .88),
+      rgba(24, 16, 14, .35) 65%,
+      rgba(24, 16, 14, .18)
+    ),
+    url("https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=2000&q=85")
+    center / cover no-repeat;
+}
+
+.hero-content {
+  max-width: 570px;
+}
+
+.eyebrow {
+  color: #D39AA5;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 4px;
+}
+
+.hero h1 {
+  font-size: clamp(48px, 8vw, 88px);
+  font-weight: normal;
+  line-height: 1.2;
+  letter-spacing: 3px;
+  margin: 20px 0;
+}
+
+.hero h1 span {
+  color: #D39AA5;
+}
+
+.hero p {
+  font-size: 14px;
+  line-height: 2.2;
+  color: #F0E2D7;
+}
+
+.hero .button {
+  margin-top: 22px;
+}
+
+.hero-note {
+  position: absolute;
+  right: 8%;
+  bottom: 35px;
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: #F2E7DA;
+  opacity: .8;
+  font-style: italic;
+}
+
+/* COMMON */
+
+.section {
+  max-width: 1200px;
+  padding: 90px 7%;
+  margin: auto;
+}
+
+.section-heading {
+  margin-bottom: 35px;
+}
+
+.section-heading h2 {
+  font-size: 30px;
+  font-weight: normal;
+  margin: 8px 0;
+  line-height: 1.6;
+}
+
+.section-heading p {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.divider {
+  width: 45px;
+  height: 1px;
+  background: var(--accent);
+  margin: 22px 0;
+}
+
+/* ABOUT */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr .75fr;
+  align-items: center;
+  gap: 35px;
+}
+
+.about-photo {
+  height: 340px;
+  border-radius: 4px;
+  filter: brightness(.83);
+}
+
+.about-copy h2 {
+  font-size: 27px;
+  line-height: 1.7;
+  font-weight: normal;
+}
+
+.about-copy p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.quote {
+  padding: 35px 20px;
+  text-align: center;
+  background: var(--sub);
+  color: #E5B6C0;
+  border: 1px solid #4B3436;
+}
+
+.quote .flower {
+  font-size: 38px;
+}
+
+.quote p {
+  font-size: 14px;
+  line-height: 2.2;
+}
+
+.quote small {
+  letter-spacing: 3px;
+}
+
+/* MENU */
+
+.menu-section {
+  background: var(--bg-light);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.menu-layout {
+  display: grid;
+  grid-template-columns: .75fr 1.7fr;
+  gap: 45px;
+  align-items: start;
+}
+
+.menu-intro {
+  position: sticky;
+  top: 110px;
+}
+
+.menu-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 25px 0;
+}
+
+.menu-tab {
+  padding: 7px 16px;
+  border: 1px solid #6B4A45;
+  background: transparent;
+  color: var(--text);
+  border-radius: 25px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.menu-tab.active,
+.menu-tab:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px 22px;
+}
+
+.menu-item {
+  overflow: hidden;
+  animation: fadeIn .35s ease;
+}
+
+.menu-item img {
+  height: 220px;
+  border-radius: 4px;
+  filter: brightness(.88);
+  transition: transform .5s, filter .5s;
+}
+
+.menu-item:hover img {
+  transform: scale(1.04);
+  filter: brightness(1);
+}
+
+.menu-item h3 {
+  font-size: 15px;
+  font-weight: normal;
+  margin: 12px 0 0;
+}
+
+.menu-item p {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 3px 0;
+}
+
+.price {
+  font-size: 13px;
+  color: #D39AA5;
+}
+
+/* MOOD */
+
+.mood {
+  padding: 85px 7%;
+  text-align: center;
+  background:
+    linear-gradient(rgba(22, 15, 13, .72), rgba(22, 15, 13, .8)),
+    url("https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1800&q=85")
+    center / cover fixed;
+}
+
+.mood h2 {
+  font-size: clamp(28px, 5vw, 42px);
+  font-weight: normal;
+  letter-spacing: 2px;
+}
+
+.mood p {
+  color: #E0CEC1;
+  font-size: 13px;
+}
+
+/* GALLERY */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 16px;
+}
+
+.gallery-grid img {
+  height: 270px;
+  border-radius: 4px;
+  filter: brightness(.82);
+  transition: filter .3s;
+}
+
+.gallery-grid img:hover {
+  filter: brightness(1);
+}
+
+/* ACCESS */
+
+.access-section {
+  background: var(--sub);
+  border-top: 1px solid var(--line);
+}
+
+.access-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 55px;
+  align-items: center;
+}
+
+.access-info p {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.access-info strong {
+  color: var(--text);
+}
+
+.map-placeholder {
+  min-height: 290px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid #65454A;
+  background:
+    linear-gradient(45deg, #46312F 25%, transparent 25%),
+    linear-gradient(-45deg, #46312F 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #46312F 75%),
+    linear-gradient(-45deg, transparent 75%, #46312F 75%);
+  background-size: 40px 40px;
+  background-color: #352522;
+}
+
+.pin {
+  color: #D39AA5;
+  font-size: 38px;
+}
+
+.map-placeholder strong {
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.map-placeholder span:last-child {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+/* FOOTER */
+
 footer {
-    position: fixed;
-    bottom: 0;
+  padding: 40px 7%;
+  text-align: center;
+  background: #170F0D;
+  border-top: 1px solid #49352F;
+}
+
+.footer-logo {
+  font-size: 26px;
+  letter-spacing: 4px;
+}
+
+.footer-tagline {
+  color: #D39AA5;
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  margin: 20px 0;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+footer .copyright {
+  font-size: 10px;
+  color: #A99488;
+}
+
+/* ANIMATION */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 850px) {
+  header {
+    padding: 0 5%;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 76px;
     left: 0;
     width: 100%;
-    background-color: #eee2e8;
-    color: #62515d;
-    text-align: center;
-    padding: 12px 10px;
-    border-top: 2px solid #d4b5c6;
-    z-index: 1000;
+    padding: 25px;
+    background: #211916;
+    flex-direction: column;
+    gap: 20px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .quote {
+    grid-column: 1 / -1;
+  }
+
+  .menu-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-intro {
+    position: static;
+  }
 }
 
-footer p {
-    margin: 4px 0;
-    font-size: 13px;
-}
-
-footer a {
-    display: inline-block;
-    color: #9c6c88;
-    text-decoration: none;
-    margin: 0 10px;
-    transition: color 0.3s;
-}
-
-footer a:hover {
-    color: #70435e;
-    text-decoration: underline;
-}
-
-.social-links {
-    margin: 6px 0;
-}
-
-.copyright {
-    font-size: 11px;
-    color: #91818b;
-}
-
-/* スマートフォン対応 */
 @media (max-width: 600px) {
-    body {
-        padding-bottom: 155px;
-    }
+  .hero {
+    min-height: 520px;
+    padding: 55px 7%;
+    background-position: 58% center;
+  }
 
-    header {
-        padding: 28px 15px;
-    }
+  .hero h1 {
+    font-size: 49px;
+  }
 
-    header h1 {
-        font-size: 24px;
-        letter-spacing: 3px;
-    }
+  .hero-note {
+    font-size: 10px;
+    right: 6%;
+  }
 
-    main {
-        margin: 28px auto;
-        padding: 0 14px;
-    }
+  .section {
+    padding: 60px 6%;
+  }
 
-    section {
-        padding: 21px;
-    }
+  .about-grid,
+  .access-grid {
+    grid-template-columns: 1fr;
+  }
 
-    section h2 {
-        font-size: 18px;
-    }
+  .about-photo {
+    height: 270px;
+  }
 
-    footer {
-        font-size: 12px;
-    }
+  .quote {
+    grid-column: auto;
+  }
 
-    footer a {
-        margin: 0 6px;
-    }
+  .menu-grid {
+    gap: 22px 13px;
+  }
+
+  .menu-item img {
+    height: 155px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .gallery-grid img {
+    height: 175px;
+  }
+
+  .gallery-grid img:first-child {
+    grid-column: 1 / -1;
+    height: 220px;
+  }
+
+  .mood {
+    background-attachment: scroll;
+  }
 }
-    </style>
+</style>
 </head>
 
 <body>
-    <!-- ヘッダー -->
-    <header>
-        <h1>私の自己紹介</h1>
-    </header>
 
-    <!-- メインコンテンツ -->
-    <main>
-        <section>
-            <h2>01. 出身大学</h2>
-            <p>
-                椙山女学園大学・現代マネジメント学部・現代マネジメント学科
-            </p> 
-            <img src="https://github.com/wakidamaori/tast1/blob/main/cupcake.jpg?raw=true" alt="サンプル">
-        </section>
+<!-- HEADER -->
+<header>
+  <a class="logo" href="#home">moonlit <span>café</span></a>
 
-        <section>
-            <h2>02. 趣味</h2>
-            <p>
-                スポーツ観戦（野球・ラグビー）、編み物
-            </p>
-        </section>
+  <button class="menu-toggle"
+    aria-label="メニューを開く"
+    aria-expanded="false"
+    onclick="toggleMenu()">☰</button>
 
-        <section>
-            <h2>03. 好きなチーム</h2>
-            <p>
-                中日ドラゴンズ・トヨタヴェルブリッツ
-            </p>
-        </section>
-    </main>
+  <nav id="navigation">
+    <a href="#home">HOME</a>
+    <a href="#about">ABOUT</a>
+    <a href="#menu">MENU</a>
+    <a href="#gallery">GALLERY</a>
+    <a href="#access">ACCESS</a>
+    <a href="mailto:hello@example.com?subject=カフェの予約"
+       class="nav-button">RESERVATION</a>
+  </nav>
+</header>
 
-    <!-- フッター -->
-    <footer>
+<main>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <span class="eyebrow">A QUIET NIGHT IN SEOUL</span>
+    <h1>moonlit<br><span>café</span></h1>
+    <p>
+            香り豊かなコーヒーと、甘いご褒美。<br>
+      一日の終わりに、自分だけの時間を。
+    </p>
+    <a href="#menu" class="button">EXPLORE OUR MENU →</a>
+  </div>
+  <div class="hero-note">Slow down, stay a little longer.</div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="about-grid">
+
+    <img class="about-photo"
+      src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=85"
+      alt="落ち着いたカフェの店内">
+
+    <div class="about-copy">
+      <span class="eyebrow">ABOUT US</span>
+      <h2>夜だからこその心地よさ。</h2>
+      <div class="divider"></div>
+      <p>
+        韓国の夜カフェをイメージした、
+        静かで心地よい空間。
+      </p>
+      <p>
+        あたたかな灯り、ゆったり流れる音楽、
+        こだわりのコーヒーと手作りスイーツ。
+        忙しい一日を忘れて、
+        あなたらしい夜をお過ごしください。
+      </p>
+      <a href="#gallery" class="button">OUR SPACE →</a>
+    </div>
+
+    <div class="quote">
+      <div class="flower">☾</div>
+      <p>
+        夜の静けさと<br>
+        おいしい一杯が<br>
+        明日の私をやさしくする。
+      </p>
+      <small>— moonlit café</small>
+    </div>
+
+  </div>
+</section>
+
+<!-- MENU -->
+<section class="menu-section" id="menu">
+  <div class="section menu-layout">
+
+    <div class="menu-intro">
+      <span class="eyebrow">OUR MENU</span>
+      <div class="section-heading">
+        <h2>夜を彩る、<br>小さなご褒美。</h2>
         <p>
-            お問い合わせ：
-            <a href="mailto:info@example.com">
-                info@example.com
-            </a>
+          お気に入りのドリンクとスイーツで、<br>
+          いつもより少し贅沢な夜を。
         </p>
+      </div>
 
-        <div class="social-links">
-            <a href="https://x.com/"
-               target="_blank"
-               rel="noopener noreferrer">X（Twitter）</a>
+      <div class="menu-tabs">
+        <button class="menu-tab active"
+          onclick="filterMenu('all', this)">ALL</button>
+        <button class="menu-tab"
+          onclick="filterMenu('drink', this)">DRINK</button>
+        <button class="menu-tab"
+          onclick="filterMenu('sweet', this)">SWEETS</button>
+      </div>
 
-            <a href="https://www.instagram.com/"
-               target="_blank"
-               rel="noopener noreferrer">Instagram</a>
-        </div>
+      <p style="font-size:11px;color:#A99488">
+        ※ メニュー・価格はサンプルです。
+      </p>
+    </div>
 
-        <p class="copyright">
-            &copy; 2026 My Website
-        </p>
-    </footer>
+    <div class="menu-grid">
+
+      <article class="menu-item" data-category="drink">
+        <img
+          src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=700&q=85"
+          alt="アイスカフェラテ">
+        <h3>Moon Latte</h3>
+        <p>まろやかなミルクと深いエスプレッソ</p>
+        <span class="price">¥550</span>
+      </article>
+
+      <article class="menu-item" data-category="sweet">
+        <img
+          src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=700&q=85"
+          alt="チョコレートケーキ">
+        <h3>Chocolate Cake</h3>
+        <p>夜に楽しむ濃厚なチョコレート</p>
+        <span class="price">¥680</span>
+      </article>
+
+      <article class="menu-item" data-category="drink">
+        <img
+          src="https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&w=700&q=85"
+          alt="抹茶ラテ">
+        <h3>Matcha Latte</h3>
+        <p>ほろ苦い抹茶とやさしいミルク</p>
+        <span class="price">¥580</span>
+      </article>
+
+      <article class="menu-item" data-category="sweet">
+        <img
+          src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=700&q=85"
+          alt="クリームデザート">
+        <h3>Night Dessert</h3>
+        <p>一日の終わりに楽しむ甘い時間</p>
+        <span class="price">¥630</span>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- MOOD -->
+<section class="mood">
+  <span class="eyebrow">YOUR OWN LITTLE ESCAPE</span>
+  <h2>Stay a little longer.</h2>
+  <p>
+    あわただしい毎日から少し離れて。<br>
+    今夜は、ゆっくり過ごしてみませんか。
+  </p>
+  <a href="#access" class="button">COME VISIT US →</a>
+</section>
+
+<!-- GALLERY -->
+<section class="section" id="gallery">
+  <div class="section-heading">
+    <span class="eyebrow">OUR SPACE</span>
+    <h2>灯りに包まれる空間。</h2>
+    <p>お気に入りの席で、ゆっくりと流れる夜を。</p>
+  </div>
+
+  <div class="gallery-grid">
+    <img
+      src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=85"
+      alt="落ち着いたカフェの内装">
+    <img
+      src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=700&q=85"
+      alt="カフェのカウンター">
+    <img
+      src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=700&q=85"
+      alt="コーヒーを淹れる様子">
+  </div>
+</section>
+
+<!-- ACCESS -->
+<section class="access-section" id="access">
+  <div class="section access-grid">
+
+    <div class="access-info">
+      <span class="eyebrow">VISIT US</span>
+      <div class="section-heading">
+        <h2>ACCESS</h2>
+        <p>今夜、ここでお待ちしています。</p>
+      </div>
+
+      <p><strong>moonlit café</strong></p>
+      <p>住所：ここにお店の住所を入力</p>
+      <p>営業時間：17:00 – 23:00</p>
+      <p>定休日：不定休</p>
+      <p>最寄り駅：ここに駅名を入力</p>
+
+      <a class="button filled"
+        href="https://www.google.com/maps"
+        target="_blank" rel="noopener">
+        GOOGLE MAP →
+      </a>
+    </div>
+
+    <div class="map-placeholder">
+      <span class="pin">♥</span>
+      <strong>moonlit café</strong>
+      <span>See you after sunset.</span>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">moonlit café</div>
+  <p class="footer-tagline">SLOW NIGHTS, SWEET MOMENTS.</p>
+
+  <div class="footer-links">
+    <a href="#home">HOME</a>
+    <a href="#menu">MENU</a>
+    <a href="#gallery">GALLERY</a>
+    <a href="#access">ACCESS</a>
+  </div>
+
+  <p class="copyright">© moonlit café. All rights reserved.</p>
+</footer>
+
+<script>
+function toggleMenu() {
+  const nav = document.getElementById("navigation");
+  const button = document.querySelector(".menu-toggle");
+  const isOpen = nav.classList.toggle("open");
+
+  button.setAttribute("aria-expanded", isOpen);
+  button.textContent = isOpen ? "×" : "☰";
+}
+
+document.querySelectorAll("#navigation a").forEach(link => {
+  link.addEventListener("click", () => {
+    document.getElementById("navigation").classList.remove("open");
+
+    const button = document.querySelector(".menu-toggle");
+    button.setAttribute("aria-expanded", "false");
+    button.textContent = "☰";
+  });
+});
+
+function filterMenu(category, button) {
+  document.querySelectorAll(".menu-tab").forEach(tab => {
+    tab.classList.remove("active");
+  });
+
+  button.classList.add("active");
+
+  document.querySelectorAll(".menu-item").forEach(item => {
+    const matches =
+      category === "all" ||
+      item.dataset.category === category;
+
+    item.style.display = matches ? "block" : "none";
+  });
+}
+</script>
+
 </body>
 </html>
