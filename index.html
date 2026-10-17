@@ -4,19 +4,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>moonlit café | Korean Night Cafe</title>
-<meta name="description" content="夜の静けさと、コーヒーの香り。韓国カフェ風のナイトカフェ。">
+<title>mellow night | Korean Cafe</title>
+<meta name="description" content="やさしい灯りと甘い香りに包まれる、韓国風ナイトカフェ。">
 
 <style>
 :root {
-  --bg: #211916;
-  --bg-light: #2D211E;
-  --text: #F2E7DA;
-  --accent: #A85D70;
-  --sub: #392824;
-  --muted: #C8B6A7;
-  --line: #49352F;
+  --bg: #F8F2EB;
+  --paper: #FFFCF8;
+  --text: #59463D;
+  --accent: #B87986;
+  --soft: #F0E0DA;
+  --muted: #927D71;
+  --line: #E8D8CC;
 }
 
 * {
@@ -43,8 +42,8 @@ a {
 }
 
 img {
-  width: 100%;
   display: block;
+  width: 100%;
   object-fit: cover;
 }
 
@@ -53,17 +52,18 @@ button {
 }
 
 header {
-  height: 76px;
-  padding: 0 7%;
+  min-height: 76px;
+  padding: 15px 7%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: rgba(248, 242, 235, .96);
+  border-bottom: 1px solid var(--line);
   position: sticky;
   top: 0;
-  z-index: 100;
-  background: rgba(33, 25, 22, .97);
-  border-bottom: 1px solid var(--line);
-  backdrop-filter: blur(10px);
+  z-index: 10;
+  backdrop-filter: blur(12px);
 }
 
 .logo {
@@ -73,54 +73,55 @@ header {
 }
 
 .logo span {
-  color: #D39AA5;
+  color: var(--accent);
 }
 
 nav {
   display: flex;
   align-items: center;
-  gap: 27px;
+  gap: 25px;
 }
 
 nav a {
   font-family: Arial, sans-serif;
   font-size: 10px;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   transition: color .3s;
 }
 
 nav a:hover {
-  color: #D39AA5;
+  color: var(--accent);
 }
 
-.nav-button,
+.nav-cta,
 .button {
   display: inline-block;
-  padding: 10px 24px;
+  padding: 10px 23px;
   border: 1px solid var(--accent);
   border-radius: 30px;
-  color: #F2E7DA;
+  color: var(--accent);
   font-size: 12px;
   letter-spacing: 1px;
   transition: .3s;
 }
 
-.nav-button,
+.nav-cta,
 .button.filled {
+  color: white;
   background: var(--accent);
 }
 
 .button:hover,
-.nav-button:hover {
-  background: #F2E7DA;
-  color: var(--bg);
-  border-color: #F2E7DA;
+.nav-cta:hover {
+  color: white;
+  background: var(--text);
+  border-color: var(--text);
 }
 
 .menu-toggle {
   display: none;
   border: none;
-  background: none;
+  background: transparent;
   color: var(--text);
   font-size: 25px;
   cursor: pointer;
@@ -130,19 +131,19 @@ nav a:hover {
 
 .hero {
   min-height: 610px;
-  position: relative;
   display: flex;
   align-items: center;
   padding: 80px 9%;
+  position: relative;
   background:
     linear-gradient(
       90deg,
-      rgba(24, 16, 14, .88),
-      rgba(24, 16, 14, .35) 65%,
-      rgba(24, 16, 14, .18)
+      rgba(64, 43, 34, .55),
+      rgba(64, 43, 34, .12)
     ),
-    url("https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=2000&q=85")
-    center / cover no-repeat;
+    url("https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=2000&q=85")
+    center 55% / cover no-repeat;
+  color: white;
 }
 
 .hero-content {
@@ -150,94 +151,101 @@ nav a:hover {
 }
 
 .eyebrow {
-  color: #D39AA5;
+  color: var(--accent);
   font-family: Arial, sans-serif;
   font-size: 10px;
   letter-spacing: 4px;
 }
 
+.hero .eyebrow {
+  color: #FFE2E2;
+}
+
 .hero h1 {
-  font-size: clamp(48px, 8vw, 88px);
-  font-weight: normal;
+  font-size: clamp(48px, 8vw, 86px);
   line-height: 1.2;
-  letter-spacing: 3px;
-  margin: 20px 0;
+  font-weight: normal;
+  letter-spacing: 2px;
+  margin: 18px 0;
 }
 
 .hero h1 span {
-  color: #D39AA5;
+  color: #F8D9D9;
 }
 
 .hero p {
   font-size: 14px;
-  line-height: 2.2;
-  color: #F0E2D7;
+  line-height: 2.3;
 }
 
 .hero .button {
-  margin-top: 22px;
+  margin-top: 18px;
+  color: white;
+  border-color: white;
 }
 
-.hero-note {
+.hero .button:hover {
+  background: white;
+  color: var(--text);
+}
+
+.hero-caption {
   position: absolute;
-  right: 8%;
-  bottom: 35px;
-  font-size: 12px;
-  letter-spacing: 3px;
-  color: #F2E7DA;
-  opacity: .8;
-  font-style: italic;
+  right: 7%;
+  bottom: 30px;
+  font-size: 11px;
+  letter-spacing: 2px;
 }
 
-/* COMMON */
+/* SECTION */
 
 .section {
   max-width: 1200px;
-  padding: 90px 7%;
+  padding: 85px 7%;
   margin: auto;
 }
 
-.section-heading {
+.heading {
   margin-bottom: 35px;
 }
 
-.section-heading h2 {
-  font-size: 30px;
-  font-weight: normal;
+.heading h2 {
   margin: 8px 0;
+  font-size: 30px;
   line-height: 1.6;
+  font-weight: normal;
 }
 
-.section-heading p {
+.heading p {
   font-size: 13px;
   color: var(--muted);
 }
 
-.divider {
-  width: 45px;
+.line {
+  width: 42px;
   height: 1px;
-  background: var(--accent);
   margin: 22px 0;
+  background: var(--accent);
 }
 
 /* ABOUT */
 
 .about-grid {
   display: grid;
-  grid-template-columns: 1.1fr 1fr .75fr;
+  grid-template-columns: 1.1fr 1fr .8fr;
   align-items: center;
-  gap: 35px;
+  gap: 30px;
 }
 
 .about-photo {
   height: 340px;
   border-radius: 4px;
-  filter: brightness(.83);
+  filter: brightness(.96);
 }
 
 .about-copy h2 {
-  font-size: 27px;
-  line-height: 1.7;
+  font-size: 26px;
+  line-height: 1.8;
   font-weight: normal;
 }
 
@@ -246,31 +254,27 @@ nav a:hover {
   font-size: 13px;
 }
 
-.quote {
-  padding: 35px 20px;
+.note {
+  padding: 30px 20px;
+  background: var(--soft);
   text-align: center;
-  background: var(--sub);
-  color: #E5B6C0;
-  border: 1px solid #4B3436;
+  color: #965F6B;
+  border-radius: 3px;
 }
 
-.quote .flower {
-  font-size: 38px;
+.note .moon {
+  font-size: 34px;
 }
 
-.quote p {
+.note p {
   font-size: 14px;
-  line-height: 2.2;
-}
-
-.quote small {
-  letter-spacing: 3px;
+  line-height: 2.3;
 }
 
 /* MENU */
 
 .menu-section {
-  background: var(--bg-light);
+  background: var(--paper);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
@@ -278,8 +282,8 @@ nav a:hover {
 .menu-layout {
   display: grid;
   grid-template-columns: .75fr 1.7fr;
-  gap: 45px;
   align-items: start;
+  gap: 45px;
 }
 
 .menu-intro {
@@ -287,27 +291,28 @@ nav a:hover {
   top: 110px;
 }
 
-.menu-tabs {
+.tabs {
   display: flex;
-  gap: 8px;
   flex-wrap: wrap;
-  margin: 25px 0;
+  gap: 8px;
+  margin: 22px 0;
 }
 
-.menu-tab {
+.tab {
   padding: 7px 16px;
-  border: 1px solid #6B4A45;
-  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 30px;
   color: var(--text);
-  border-radius: 25px;
+  background: transparent;
   font-size: 12px;
   cursor: pointer;
   transition: .3s;
 }
 
-.menu-tab.active,
-.menu-tab:hover {
+.tab.active,
+.tab:hover {
   background: var(--accent);
+  color: white;
   border-color: var(--accent);
 }
 
@@ -319,58 +324,62 @@ nav a:hover {
 
 .menu-item {
   overflow: hidden;
-  animation: fadeIn .35s ease;
+  animation: appear .35s ease;
 }
 
 .menu-item img {
-  height: 220px;
+  height: 215px;
   border-radius: 4px;
-  filter: brightness(.88);
-  transition: transform .5s, filter .5s;
+  filter: brightness(.97);
+  transition: transform .4s;
 }
 
 .menu-item:hover img {
-  transform: scale(1.04);
-  filter: brightness(1);
+  transform: scale(1.035);
 }
 
 .menu-item h3 {
   font-size: 15px;
   font-weight: normal;
-  margin: 12px 0 0;
+  margin: 10px 0 0;
 }
 
 .menu-item p {
   font-size: 12px;
   color: var(--muted);
-  margin: 3px 0;
+  margin: 4px 0;
 }
 
 .price {
+  color: var(--accent);
   font-size: 13px;
-  color: #D39AA5;
 }
 
-/* MOOD */
+/* MESSAGE */
 
-.mood {
+.message {
   padding: 85px 7%;
   text-align: center;
   background:
-    linear-gradient(rgba(22, 15, 13, .72), rgba(22, 15, 13, .8)),
-    url("https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1800&q=85")
-    center / cover fixed;
+    linear-gradient(rgba(66, 43, 35, .48), rgba(66, 43, 35, .48)),
+    url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1800&q=85")
+    center / cover no-repeat;
+  color: white;
 }
 
-.mood h2 {
+.message h2 {
   font-size: clamp(28px, 5vw, 42px);
   font-weight: normal;
   letter-spacing: 2px;
 }
 
-.mood p {
-  color: #E0CEC1;
+.message p {
   font-size: 13px;
+  line-height: 2.2;
+}
+
+.message .eyebrow {
+  color: #FFE2E2;
 }
 
 /* GALLERY */
@@ -384,26 +393,25 @@ nav a:hover {
 .gallery-grid img {
   height: 270px;
   border-radius: 4px;
-  filter: brightness(.82);
+  filter: brightness(.96);
   transition: filter .3s;
 }
 
 .gallery-grid img:hover {
-  filter: brightness(1);
+  filter: brightness(1.04);
 }
 
 /* ACCESS */
 
 .access-section {
-  background: var(--sub);
-  border-top: 1px solid var(--line);
+  background: var(--soft);
 }
 
 .access-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 55px;
   align-items: center;
+  gap: 50px;
 }
 
 .access-info p {
@@ -416,29 +424,23 @@ nav a:hover {
 }
 
 .map-placeholder {
-  min-height: 290px;
+  min-height: 280px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  border: 1px solid #65454A;
-  background:
-    linear-gradient(45deg, #46312F 25%, transparent 25%),
-    linear-gradient(-45deg, #46312F 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, #46312F 75%),
-    linear-gradient(-45deg, transparent 75%, #46312F 75%);
-  background-size: 40px 40px;
-  background-color: #352522;
+  background: #F7EDE6;
+  border: 1px solid #E6CDC8;
 }
 
-.pin {
-  color: #D39AA5;
-  font-size: 38px;
+.map-placeholder .pin {
+  font-size: 35px;
+  color: var(--accent);
 }
 
 .map-placeholder strong {
-  font-size: 20px;
+  font-size: 21px;
   font-weight: normal;
 }
 
@@ -451,40 +453,39 @@ nav a:hover {
 
 footer {
   padding: 40px 7%;
+  background: #E5C7C5;
+  color: #59463D;
   text-align: center;
-  background: #170F0D;
-  border-top: 1px solid #49352F;
 }
 
 .footer-logo {
-  font-size: 26px;
-  letter-spacing: 4px;
+  font-size: 25px;
+  letter-spacing: 3px;
 }
 
 .footer-tagline {
-  color: #D39AA5;
   font-size: 11px;
   letter-spacing: 3px;
+  color: #8F5965;
 }
 
 .footer-links {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 22px;
   margin: 20px 0;
   font-family: Arial, sans-serif;
   font-size: 10px;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
 }
 
-footer .copyright {
+.copyright {
   font-size: 10px;
-  color: #A99488;
+  color: #826B61;
 }
 
-/* ANIMATION */
-
-@keyframes fadeIn {
+@keyframes appear {
   from {
     opacity: 0;
     transform: translateY(8px);
@@ -495,11 +496,11 @@ footer .copyright {
   }
 }
 
-/* MOBILE */
+/* RESPONSIVE */
 
 @media (max-width: 850px) {
   header {
-    padding: 0 5%;
+    padding: 12px 5%;
   }
 
   .menu-toggle {
@@ -513,9 +514,9 @@ footer .copyright {
     left: 0;
     width: 100%;
     padding: 25px;
-    background: #211916;
     flex-direction: column;
     gap: 20px;
+    background: var(--bg);
     border-bottom: 1px solid var(--line);
   }
 
@@ -527,7 +528,7 @@ footer .copyright {
     grid-template-columns: 1fr 1fr;
   }
 
-  .quote {
+  .note {
     grid-column: 1 / -1;
   }
 
@@ -542,18 +543,13 @@ footer .copyright {
 
 @media (max-width: 600px) {
   .hero {
-    min-height: 520px;
+    min-height: 500px;
     padding: 55px 7%;
-    background-position: 58% center;
+    background-position: 55% center;
   }
 
   .hero h1 {
     font-size: 49px;
-  }
-
-  .hero-note {
-    font-size: 10px;
-    right: 6%;
   }
 
   .section {
@@ -566,10 +562,10 @@ footer .copyright {
   }
 
   .about-photo {
-    height: 270px;
+    height: 260px;
   }
 
-  .quote {
+  .note {
     grid-column: auto;
   }
 
@@ -586,16 +582,12 @@ footer .copyright {
   }
 
   .gallery-grid img {
-    height: 175px;
+    height: 170px;
   }
 
   .gallery-grid img:first-child {
     grid-column: 1 / -1;
     height: 220px;
-  }
-
-  .mood {
-    background-attachment: scroll;
   }
 }
 </style>
@@ -603,9 +595,8 @@ footer .copyright {
 
 <body>
 
-<!-- HEADER -->
 <header>
-  <a class="logo" href="#home">moonlit <span>café</span></a>
+  <a href="#home" class="logo">mellow <span>night</span></a>
 
   <button class="menu-toggle"
     aria-label="メニューを開く"
@@ -619,214 +610,215 @@ footer .copyright {
     <a href="#gallery">GALLERY</a>
     <a href="#access">ACCESS</a>
     <a href="mailto:hello@example.com?subject=カフェの予約"
-       class="nav-button">RESERVATION</a>
+       class="nav-cta">RESERVATION</a>
   </nav>
 </header>
 
 <main>
 
-<!-- HERO -->
-<section class="hero" id="home">
-  <div class="hero-content">
-    <span class="eyebrow">A QUIET NIGHT IN SEOUL</span>
-    <h1>moonlit<br><span>café</span></h1>
-    <p>
-            香り豊かなコーヒーと、甘いご褒美。<br>
-      一日の終わりに、自分だけの時間を。
-    </p>
-    <a href="#menu" class="button">EXPLORE OUR MENU →</a>
-  </div>
-  <div class="hero-note">Slow down, stay a little longer.</div>
-</section>
-
-<!-- ABOUT -->
-<section class="section" id="about">
-  <div class="about-grid">
-
-    <img class="about-photo"
-      src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=85"
-      alt="落ち着いたカフェの店内">
-
-    <div class="about-copy">
-      <span class="eyebrow">ABOUT US</span>
-      <h2>夜だからこその心地よさ。</h2>
-      <div class="divider"></div>
+  <!-- TOP -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <span class="eyebrow">YOUR LITTLE NIGHT RETREAT</span>
+      <h1>mellow<br><span>night.</span></h1>
       <p>
-        韓国の夜カフェをイメージした、
-        静かで心地よい空間。
+        夜に、甘いひとときを。<br>
+        お気に入りのコーヒーとスイーツで、<br>
+        一日の終わりに小さなご褒美を。
       </p>
-      <p>
-        あたたかな灯り、ゆったり流れる音楽、
-        こだわりのコーヒーと手作りスイーツ。
-        忙しい一日を忘れて、
-        あなたらしい夜をお過ごしください。
-      </p>
-      <a href="#gallery" class="button">OUR SPACE →</a>
+      <a href="#menu" class="button">DISCOVER OUR MENU →</a>
     </div>
 
-    <div class="quote">
-      <div class="flower">☾</div>
-      <p>
-        夜の静けさと<br>
-        おいしい一杯が<br>
-        明日の私をやさしくする。
-      </p>
-      <small>— moonlit café</small>
-    </div>
+    <div class="hero-caption">SLOW DOWN, ENJOY THE NIGHT.</div>
+  </section>
 
-  </div>
-</section>
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="about-grid">
 
-<!-- MENU -->
-<section class="menu-section" id="menu">
-  <div class="section menu-layout">
+      <img class="about-photo"
+        src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=85"
+        alt="韓国カフェ風の落ち着いた店内">
 
-    <div class="menu-intro">
-      <span class="eyebrow">OUR MENU</span>
-      <div class="section-heading">
-        <h2>夜を彩る、<br>小さなご褒美。</h2>
+      <div class="about-copy">
+        <span class="eyebrow">ABOUT US</span>
+        <h2>今日の終わりに、<br>やさしい時間を。</h2>
+        <div class="line"></div>
         <p>
-          お気に入りのドリンクとスイーツで、<br>
-          いつもより少し贅沢な夜を。
+          韓国のカフェをイメージした、
+          ぬくもりのあるナイトカフェ。
+        </p>
+        <p>
+          柔らかな照明と落ち着いた空間、
+          香り豊かなコーヒーに甘いスイーツ。
+          忙しい毎日から少し離れて、
+          自分らしい時間を過ごしてみませんか。
+        </p>
+        <a href="#gallery" class="button">OUR SPACE →</a>
+      </div>
+
+      <div class="note">
+        <div class="moon">☾</div>
+        <p>
+          好きな音楽と<br>
+          あたたかい一杯。<br>
+          今夜は少し、ゆっくり。
+        </p>
+        <span>— mellow night</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="menu-section" id="menu">
+    <div class="section menu-layout">
+
+      <div class="menu-intro">
+        <span class="eyebrow">OUR MENU</span>
+        <div class="heading">
+          <h2>甘い夜の、<br>お気に入り。</h2>
+          <p>
+            一日の終わりにぴったりな<br>
+            ドリンクとスイーツ。
+          </p>
+        </div>
+
+        <div class="tabs">
+          <button class="tab active"
+            onclick="filterMenu('all', this)">ALL</button>
+          <button class="tab"
+            onclick="filterMenu('drink', this)">DRINK</button>
+          <button class="tab"
+            onclick="filterMenu('sweet', this)">SWEETS</button>
+        </div>
+
+        <p style="font-size:11px;color:#927D71">
+          ※ メニュー・価格はサンプルです。
         </p>
       </div>
 
-      <div class="menu-tabs">
-        <button class="menu-tab active"
-          onclick="filterMenu('all', this)">ALL</button>
-        <button class="menu-tab"
-          onclick="filterMenu('drink', this)">DRINK</button>
-        <button class="menu-tab"
-          onclick="filterMenu('sweet', this)">SWEETS</button>
+      <div class="menu-grid">
+
+        <article class="menu-item" data-category="drink">
+          <img
+            src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=700&q=85"
+            alt="カフェラテ">
+          <h3>Moon Latte</h3>
+          <p>エスプレッソとまろやかなミルク</p>
+          <span class="price">¥550</span>
+        </article>
+
+        <article class="menu-item" data-category="sweet">
+          <img
+            src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=700&q=85"
+            alt="チョコレートケーキ">
+          <h3>Chocolate Cake</h3>
+          <p>濃厚なチョコレートのご褒美</p>
+          <span class="price">¥680</span>
+        </article>
+
+        <article class="menu-item" data-category="drink">
+          <img
+            src="https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&w=700&q=85"
+            alt="抹茶ラテ">
+          <h3>Matcha Latte</h3>
+          <p>ほろ苦い抹茶とやさしいミルク</p>
+          <span class="price">¥580</span>
+        </article>
+
+        <article class="menu-item" data-category="sweet">
+          <img
+            src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=700&q=85"
+            alt="クリームデザート">
+          <h3>Night Dessert</h3>
+          <p>季節の素材を使ったデザート</p>
+          <span class="price">¥630</span>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MESSAGE -->
+  <section class="message">
+    <span class="eyebrow">TAKE A LITTLE BREAK</span>
+    <h2>Make tonight special.</h2>
+    <p>
+      いつもの夜に、小さなときめきを。<br>
+      お気に入りの席で、心ほどけるひとときを。
+    </p>
+    <a href="#access" class="button">COME VISIT US →</a>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section" id="gallery">
+    <div class="heading">
+      <span class="eyebrow">OUR SPACE</span>
+      <h2>好きが見つかる、心地よい空間。</h2>
+      <p>柔らかな灯りと、ゆったりと流れる時間。</p>
+    </div>
+
+    <div class="gallery-grid">
+      <img
+        src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=85"
+        alt="カフェのインテリア">
+      <img
+        src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=700&q=85"
+        alt="カフェのテーブル">
+      <img
+        src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=700&q=85"
+        alt="コーヒーを淹れる様子">
+    </div>
+  </section>
+
+  <!-- ACCESS -->
+  <section class="access-section" id="access">
+    <div class="section access-grid">
+
+      <div class="access-info">
+        <span class="eyebrow">VISIT US</span>
+        <div class="heading">
+          <h2>ACCESS</h2>
+          <p>今夜、ここでお待ちしています。</p>
+        </div>
+
+        <p><strong>mellow night</strong></p>
+        <p>住所：ここにお店の住所を入力</p>
+        <p>営業時間：17:00 – 23:00</p>
+        <p>定休日：不定休</p>
+        <p>最寄り駅：ここに駅名を入力</p>
+
+        <a class="button filled"
+          href="https://www.google.com/maps"
+          target="_blank" rel="noopener">
+          GOOGLE MAP →
+        </a>
       </div>
 
-      <p style="font-size:11px;color:#A99488">
-        ※ メニュー・価格はサンプルです。
-      </p>
-    </div>
-
-    <div class="menu-grid">
-
-      <article class="menu-item" data-category="drink">
-        <img
-          src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=700&q=85"
-          alt="アイスカフェラテ">
-        <h3>Moon Latte</h3>
-        <p>まろやかなミルクと深いエスプレッソ</p>
-        <span class="price">¥550</span>
-      </article>
-
-      <article class="menu-item" data-category="sweet">
-        <img
-          src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=700&q=85"
-          alt="チョコレートケーキ">
-        <h3>Chocolate Cake</h3>
-        <p>夜に楽しむ濃厚なチョコレート</p>
-        <span class="price">¥680</span>
-      </article>
-
-      <article class="menu-item" data-category="drink">
-        <img
-          src="https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&w=700&q=85"
-          alt="抹茶ラテ">
-        <h3>Matcha Latte</h3>
-        <p>ほろ苦い抹茶とやさしいミルク</p>
-        <span class="price">¥580</span>
-      </article>
-
-      <article class="menu-item" data-category="sweet">
-        <img
-          src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=700&q=85"
-          alt="クリームデザート">
-        <h3>Night Dessert</h3>
-        <p>一日の終わりに楽しむ甘い時間</p>
-        <span class="price">¥630</span>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- MOOD -->
-<section class="mood">
-  <span class="eyebrow">YOUR OWN LITTLE ESCAPE</span>
-  <h2>Stay a little longer.</h2>
-  <p>
-    あわただしい毎日から少し離れて。<br>
-    今夜は、ゆっくり過ごしてみませんか。
-  </p>
-  <a href="#access" class="button">COME VISIT US →</a>
-</section>
-
-<!-- GALLERY -->
-<section class="section" id="gallery">
-  <div class="section-heading">
-    <span class="eyebrow">OUR SPACE</span>
-    <h2>灯りに包まれる空間。</h2>
-    <p>お気に入りの席で、ゆっくりと流れる夜を。</p>
-  </div>
-
-  <div class="gallery-grid">
-    <img
-      src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=85"
-      alt="落ち着いたカフェの内装">
-    <img
-      src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=700&q=85"
-      alt="カフェのカウンター">
-    <img
-      src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=700&q=85"
-      alt="コーヒーを淹れる様子">
-  </div>
-</section>
-
-<!-- ACCESS -->
-<section class="access-section" id="access">
-  <div class="section access-grid">
-
-    <div class="access-info">
-      <span class="eyebrow">VISIT US</span>
-      <div class="section-heading">
-        <h2>ACCESS</h2>
-        <p>今夜、ここでお待ちしています。</p>
+      <div class="map-placeholder">
+        <span class="pin">♡</span>
+        <strong>mellow night</strong>
+        <span>See you after sunset.</span>
       </div>
 
-      <p><strong>moonlit café</strong></p>
-      <p>住所：ここにお店の住所を入力</p>
-      <p>営業時間：17:00 – 23:00</p>
-      <p>定休日：不定休</p>
-      <p>最寄り駅：ここに駅名を入力</p>
-
-      <a class="button filled"
-        href="https://www.google.com/maps"
-        target="_blank" rel="noopener">
-        GOOGLE MAP →
-      </a>
     </div>
-
-    <div class="map-placeholder">
-      <span class="pin">♥</span>
-      <strong>moonlit café</strong>
-      <span>See you after sunset.</span>
-    </div>
-
-  </div>
-</section>
+  </section>
 
 </main>
 
-<!-- FOOTER -->
 <footer>
-  <div class="footer-logo">moonlit café</div>
-  <p class="footer-tagline">SLOW NIGHTS, SWEET MOMENTS.</p>
+  <div class="footer-logo">mellow night</div>
+  <p class="footer-tagline">SWEET MOMENTS, SOFT LIGHTS.</p>
 
   <div class="footer-links">
     <a href="#home">HOME</a>
+    <a href="#about">ABOUT</a>
     <a href="#menu">MENU</a>
-    <a href="#gallery">GALLERY</a>
     <a href="#access">ACCESS</a>
   </div>
 
-  <p class="copyright">© moonlit café. All rights reserved.</p>
+  <p class="copyright">© mellow night. All rights reserved.</p>
 </footer>
 
 <script>
@@ -850,18 +842,17 @@ document.querySelectorAll("#navigation a").forEach(link => {
 });
 
 function filterMenu(category, button) {
-  document.querySelectorAll(".menu-tab").forEach(tab => {
+  document.querySelectorAll(".tab").forEach(tab => {
     tab.classList.remove("active");
   });
 
   button.classList.add("active");
 
   document.querySelectorAll(".menu-item").forEach(item => {
-    const matches =
-      category === "all" ||
-      item.dataset.category === category;
+    const show =
+      category === "all" || item.dataset.category === category;
 
-    item.style.display = matches ? "block" : "none";
+    item.style.display = show ? "block" : "none";
   });
 }
 </script>
