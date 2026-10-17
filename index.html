@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>私の自己紹介</title>
+
+    <style>
+       
+/* 基本設定 */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding-bottom: 150px;
+    font-family: "Noto Sans JP", "Yu Gothic", sans-serif;
+    line-height: 1.8;
+    color: #514650;
+    background: linear-gradient(135deg, #fffaf8, #f6edf1);
+}
+
+/* ヘッダー */
+header {
+    background: linear-gradient(120deg, #d8b7c6, #bda2b8);
+    color: #fffdfd;
+    text-align: center;
+    padding: 38px 20px;
+    border-bottom: 3px solid #e5cba5;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 30px;
+    letter-spacing: 5px;
+    font-weight: 500;
+}
+
+/* メインコンテンツ */
+main {
+    max-width: 850px;
+    margin: 45px auto;
+    padding: 0 22px;
+}
+
+section {
+    background-color: rgba(255, 255, 255, 0.92);
+    padding: 28px;
+    margin-bottom: 25px;
+    border: 1px solid #eadce3;
+    border-left: 5px solid #c9a6ba;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(132, 93, 116, 0.09);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* カーソルを合わせたとき */
+section:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(132, 93, 116, 0.15);
+}
+
+section h2 {
+    color: #a16f8b;
+    font-size: 21px;
+    font-weight: 600;
+    border-bottom: 1px solid #e8cedb;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+section p {
+    margin-bottom: 0;
+    color: #5d535a;
+}
+
+/* フッター */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #eee2e8;
+    color: #62515d;
+    text-align: center;
+    padding: 12px 10px;
+    border-top: 2px solid #d4b5c6;
+    z-index: 1000;
+}
+
+footer p {
+    margin: 4px 0;
+    font-size: 13px;
+}
+
+footer a {
+    display: inline-block;
+    color: #9c6c88;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #70435e;
+    text-decoration: underline;
+}
+
+.social-links {
+    margin: 6px 0;
+}
+
+.copyright {
+    font-size: 11px;
+    color: #91818b;
+}
+
+/* スマートフォン対応 */
+@media (max-width: 600px) {
+    body {
+        padding-bottom: 155px;
+    }
+
+    header {
+        padding: 28px 15px;
+    }
+
+    header h1 {
+        font-size: 24px;
+        letter-spacing: 3px;
+    }
+
+    main {
+        margin: 28px auto;
+        padding: 0 14px;
+    }
+
+    section {
+        padding: 21px;
+    }
+
+    section h2 {
+        font-size: 18px;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+
+    footer a {
+        margin: 0 6px;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <!-- ヘッダー -->
+    <header>
+        <h1>私の自己紹介</h1>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main>
+        <section>
+            <h2>01. 出身大学</h2>
+            <p>
+                椙山女学園大学・現代マネジメント学部・現代マネジメント学科
+            </p>
+        </section>
+
+        <section>
+            <h2>02. 趣味</h2>
+            <p>
+                スポーツ観戦（野球・ラグビー）、編み物
+            </p>
+        </section>
+
+        <section>
+            <h2>03. 好きなチーム</h2>
+            <p>
+                中日ドラゴンズ・トヨタヴェルブリッツ
+            </p>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer>
+        <p>
+            お問い合わせ：
+            <a href="mailto:info@example.com">
+                info@example.com
+            </a>
+        </p>
+
+        <div class="social-links">
+            <a href="https://x.com/"
+               target="_blank"
+               rel="noopener noreferrer">X（Twitter）</a>
+
+            <a href="https://www.instagram.com/"
+               target="_blank"
+               rel="noopener noreferrer">Instagram</a>
+        </div>
+
+        <p class="copyright">
+            &copy; 2026 My Website
+        </p>
+    </footer>
+</body>
+</html>
